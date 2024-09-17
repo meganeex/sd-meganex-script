@@ -90,10 +90,7 @@ class Script(scripts.Script):
         current_time = datetime.now()
         date_str = current_time.strftime("%Y%m%d")
         time_str = current_time.strftime("%H%M%S")
-        
-        processed_dir = os.path.join(p.outpath_samples, f'processed_images_{date_str}_{time_str}')
-        os.makedirs(processed_dir, exist_ok=True)
-        
+                
         for i, image in enumerate(proc.images):
             img = image.copy()  # 元の画像のコピーを作成
             
@@ -115,6 +112,8 @@ class Script(scripts.Script):
             action_str = "_".join(action) if action else "original"
             
             if enable_resize or enable_watermark_removal:
+                processed_dir = os.path.join(p.outpath_samples, f'processed_images_{date_str}_{time_str}')
+                os.makedirs(processed_dir, exist_ok=True)
                 filename = f"{action_str}_{str(p.seed)}_{i:05}.png"
                 save_path = os.path.join(processed_dir, filename)
                 img.save(save_path)
