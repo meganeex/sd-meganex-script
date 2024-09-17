@@ -35,14 +35,27 @@ class Script(scripts.Script):
         return [enable_resize, resize_factor, enable_watermark_removal, watermark_x, watermark_y, model_choice, invert_mask]
 
     def parse_position(self, position_str, size):
-        pattern = r'^(\d*\.?\d+)-(\d*\.?\d+)$'
+        pattern = r'^(\d*\.?\d+)(?:px)?-(\d*\.?\d+)(?:px)?$'
         match = re.match(pattern, position_str)
         if not match:
             raise ValueError(f"Invalid position format: {position_str}")
-        start, end = map(float, match.groups())
-        if start < 0 or start > 1 or end < 0 or end > 1 or start >= end:
+        start, end = match.groups()
+        
+        def parse_value(value, size):
+            if value.endswith('px'):
+                return int(float(value[:-2]))
+            elif '.' in value:
+                return int(float(value) * size)
+            else:
+                return int(value)
+        
+        start_val = parse_value(start, size)
+        end_val = parse_value(end, size)
+        
+        if start_val < 0 or start_val >= size or end_val <= start_val or end_val > size:
             raise ValueError(f"Invalid position values: {position_str}")
-        return int(start * size), int(end * size)
+        
+        return start_val, end_val
 
     def create_mask(self, start_x, start_y, width, height, img_width, img_height, invert=False):
         mask = Image.new('L', (img_width, img_height), 0)
