@@ -63,6 +63,10 @@ class Script(scripts.Script):
         prompt = "clean image without watermark, high quality, detailed"
         negative_prompt = "watermark, text, logo, poor quality, blurry"
 
+        self.pipe.vae.enable_tiling()
+        self.pipe.enable_sequential_cpu_offload()
+        self.pipe.enable_attention_slicing(1)
+
         result = self.pipe(
             prompt=prompt,
             image=image,
@@ -70,6 +74,8 @@ class Script(scripts.Script):
             negative_prompt=negative_prompt,
             num_inference_steps=50,
             guidance_scale=7.5,
+            height=height,
+            width=width,
         ).images[0]
 
         return result
@@ -92,7 +98,7 @@ class Script(scripts.Script):
         time_str = current_time.strftime("%H%M%S")
                 
         for i, image in enumerate(proc.images):
-            img = image.copy()  # 元の画像のコピーを作成
+            img = image.copy()
             
             if enable_watermark_removal:
                 img = self.remove_watermark(img, watermark_x, watermark_y, invert_mask)
@@ -119,7 +125,6 @@ class Script(scripts.Script):
                 img.save(save_path)
                 print(f"Processed image {i+1}/{len(proc.images)}: saved to {save_path}")
         
-        # 処理完了後、保存先ディレクトリをブラウザに通知
         if enable_resize or enable_watermark_removal:
             gr.Info(f"Processing completed. Saved :\n{processed_dir}")
         
