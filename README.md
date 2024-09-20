@@ -21,3 +21,7 @@ From (220, 300) - (330, 400) pixel
 
 Whole image ... different image
 `0-1`
+
+## Call ABG Remover
+
+Install ABG Remover, then you can use it here.
