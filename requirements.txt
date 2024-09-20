@@ -1,0 +1,9 @@
+Pillow
+diffusers
+opencv-python
+onnxruntime
+torch
+torchvision
+torchaudio
+transformers
+accelerate
