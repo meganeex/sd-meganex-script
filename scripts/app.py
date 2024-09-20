@@ -150,7 +150,7 @@ class Script(scripts.Script):
             model_choice = gr.Dropdown(label="Inpainting Model", choices=[""] + self.model_list, value="")
             invert_mask = gr.Checkbox(label="Invert Mask", value=False)
         with gr.Row():
-            enable_bg_removal = gr.Checkbox(label="Enable Background Removal", value=False)
+            enable_bg_removal = gr.Checkbox(label="Use ABG Remover", value=False)
             bg_mode = gr.Radio(["Transparent", "Color"], label="Background Mode", value="Transparent")
             bg_color = gr.ColorPicker(label="Background Color", visible=False)
 
