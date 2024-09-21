@@ -1,4 +1,6 @@
 # Stable Diffusion Meganex Helper Script
+
+<p align="center">
 <a href="https://x.com/meganeene"><img src="https://img.shields.io/twitter/follow/Meganeex?style=social" alt="Twitter Follow"></a>
 <a href="https://www.youtube.com/@tokyo_rock_girl_meganex"><img src="https://img.shields.io/youtube/channel/subscribers/UCChJ1V1ObTcwzlAVcOXpo0w
 " alt="YouTube Subscribe"></a>
@@ -6,7 +8,7 @@
 " alt="note"></a>
 <a href="https://note.com/rock_meganex/"><img src="https://img.shields.io/badge/note-Meganex-white?label=note&link=https%3A%2F%2Fnote.com%2Frock_meganex%2F
 " alt="note"></a>
-
+</p>
 
 
 The Helper Script for Stable Diffusion
