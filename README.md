@@ -1,7 +1,7 @@
 # Stable Diffusion Meganex Helper Script
 
 <p align="left">
-<a href="https://www.youtube.com/@tokyo_rock_girl_meganex"><img src="https://img.shields.io/youtube/channel/subscribers/UCChJ1V1ObTcwzlAVcOXpo0w" alt="YouTube Subscribe"></a>
+<a href="https://www.youtube.com/@tokyo_rock_girl_ai"><img src="https://img.shields.io/youtube/channel/subscribers/UCChJ1V1ObTcwzlAVcOXpo0w" alt="YouTube Subscribe"></a>
 <a href="https://x.com/meganeene"><img src="https://img.shields.io/twitter/follow/Meganeex?style=social" alt="Twitter Follow"></a>
 <a href="https://meganex.medium.com/"><img src="https://img.shields.io/badge/Medium-Meganex-white" alt="note"></a>
 <a href="https://note.com/rock_meganex/"><img src="https://img.shields.io/badge/note-Meganex-white?label=note&link=https%3A%2F%2Fnote.com%2Frock_meganex%2F" alt="note"></a>
